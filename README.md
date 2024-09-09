@@ -12,10 +12,19 @@ nix flake show
 nix run
 ```
 
-## When change thie flake.nix
+## When change the flake.nix
 
 ```bash
 nix flake update
+```
+
+## Autocomplete to update individual deps
+
+- From [YT video](https://www.youtube.com/watch?v=wtVZk1X2_CQ&ab_channel=nixhero)
+
+```bash
+# fzf for fuzzy search, cool
+nix flake metadata  --json | jq --raw-output ".locks.nodes.root.inputs[]" | fzf | xargs nix flake lock --commit-lock-file --update-input
 ```
 
 ## Set the nix development environment accordingly
