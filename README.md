@@ -1,8 +1,13 @@
 # NIX playground
 
+- The command `nix flake init` creates a basic flake.nix for you.
+- you need to make flake.nix visible to Git: `git add flake.nix`
+
 ## Check if flake.nix is good
 
 ```bash
+nix flake check
+# or
 nix flake show
 ```
 
